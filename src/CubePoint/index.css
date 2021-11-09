@@ -1,0 +1,15 @@
+.cube-demo {
+  /* margin: 20px 0; */
+}
+.demo-title {
+  font-size: 20px;
+  margin-bottom: 12px;
+  text-align: center;
+  width: 100%;
+}
+canvas {
+  border: 2px solid cadetblue;
+	background-color: lightcyan;
+  width: 375px;
+  height: 375px;
+}
