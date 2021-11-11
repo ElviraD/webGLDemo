@@ -28,37 +28,37 @@ export default class Cube extends Component {
     // 创建一个立方体
     geometry = new THREE.BoxGeometry(100, 100, 100);
     // 加载纹理
-    // const a_ = new THREE.TextureLoader().load(
-    //   "https://img.ljcdn.com/beike/ajax/m/1574229060592.jpg"
-    // );
-    // const b_ = new THREE.TextureLoader().load(
-    //   "https://img.ljcdn.com/beike/ajax/m/1635846662207.jpg"
-    // );
+    const a_ = new THREE.TextureLoader().load(
+      "https://img.ljcdn.com/beike/ajax/m/1574229060592.jpg"
+    );
+    const b_ = new THREE.TextureLoader().load(
+      "https://img.ljcdn.com/beike/ajax/m/1635846662207.jpg"
+    );
     // 创建网格材质（原料）
-    // const material_1 = new THREE.MeshBasicMaterial({ map: a_ });
-    // const material_2 = new THREE.MeshBasicMaterial({ map: b_ });
-    // material = [
-    //   ...new Array(3).fill(material_1),
-    //   ...new Array(3).fill(material_2),
-    // ];
+    const material_1 = new THREE.MeshBasicMaterial({ map: a_ });
+    const material_2 = new THREE.MeshBasicMaterial({ map: b_ });
+    material = [
+      ...new Array(3).fill(material_1),
+      ...new Array(3).fill(material_2),
+    ];
 
-    const radius = 200;
-    const color = new THREE.Color();
-    console.log("geometry", geometry);
-    const count = geometry.attributes.position.count;
-    geometry.setAttribute( 'color', new THREE.BufferAttribute( new Float32Array( count * 3 ), 3 ) );
-    const positions = geometry.attributes.position;
-    for (let i = 0; i < count; i++) {
-      color.setHSL((positions.getY(i) / radius + 1) / 2, 1.0, 0.5);
-      geometry.attributes.color.setXYZ(i, color.r, color.g, color.b);
-    }
+    // const radius = 200;
+    // const color = new THREE.Color();
+    // console.log("geometry", geometry);
+    // const count = geometry.attributes.position.count;
+    // geometry.setAttribute( 'color', new THREE.BufferAttribute( new Float32Array( count * 3 ), 3 ) );
+    // const positions = geometry.attributes.position;
+    // for (let i = 0; i < count; i++) {
+    //   color.setHSL((positions.getY(i) / radius + 1) / 2, 1.0, 0.5);
+    //   geometry.attributes.color.setXYZ(i, color.r, color.g, color.b);
+    // }
 
-    material = new THREE.MeshPhongMaterial({
-      color: 0xffffff,
-			flatShading: true,
-			vertexColors: true,
-			shininess: 0
-    });
+    // material = new THREE.MeshPhongMaterial({
+    //   // color: 0xffffff,
+		// 	// flatShading: true,
+		// 	// vertexColors: true,
+		// 	// shininess: 0
+    // });
 
     // 网格模型对象Mesh，生成网格
     mesh = new THREE.Mesh(geometry, material);

@@ -174,7 +174,7 @@ export default class Cube extends Component {
     var width = window.innerWidth; //窗口宽度
     var height = window.innerHeight; //窗口高度
     var k = width / height; //窗口宽高比
-    var s = 220; //三维场景显示范围控制系数，系数越大，显示的范围越大
+    var s = 100; //三维场景显示范围控制系数，系数越大，显示的范围越大
     // 创建相机对象
     camera = new THREE.OrthographicCamera(-s * k, s * k, s, -s, 1, 800);
     camera.position.set(100, 400, 100); //设置相机位置
@@ -184,7 +184,7 @@ export default class Cube extends Component {
     renderer = new THREE.WebGLRenderer(); // antialias 抗锯齿
     renderer.setPixelRatio(window.devicePixelRatio);
     // 设置渲染器画布的大小
-    renderer.setSize(window.innerWidth, window.innerHeight - 200);
+    renderer.setSize(window.innerWidth, window.innerHeight - 50);
     // 把画布实例（canvas）放入容器中
     document.body.appendChild(renderer.domElement);
   }
@@ -204,8 +204,9 @@ export default class Cube extends Component {
   }
 
   update() {
-    mesh.rotateX(Math.PI / 145);
-    mesh.rotateY(Math.PI / 145);
+    mesh.rotateX(Math.PI / 180);
+    mesh.rotateY(Math.PI / 180);
+    mesh.rotateZ(Math.PI / 180);
     // mesh.rotation.x += 0.01;
     // mesh.rotation.y += 0.01;
     renderer.render(scene, camera);
