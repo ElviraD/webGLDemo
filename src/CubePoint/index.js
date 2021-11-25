@@ -24,7 +24,7 @@ export default class Cube extends Component {
     scene = new THREE.Scene();
     // 在场景中添加雾的效果，Fog参数分别代表‘雾的颜色’、‘开始雾化的视线距离’、刚好雾化至看不见的视线距离’
     scene.fog = new THREE.Fog(0x000000, 0, 10000);
-    // scene.background = new THREE.Color(0xffffff);
+    scene.background = new THREE.Color(0xffeeff);
     // 创建一个立方体
     /* ********* */
     // geometry = new THREE.BoxBufferGeometry(100, 100, 100);
